@@ -1,0 +1,111 @@
+@import url('../../variables.css');
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#game-container {
+  display: grid;
+  grid-template-columns: repeat(3, var(--wam-hole-size));
+  gap: var(--wam-gap-size);
+  justify-content: center;
+  margin-top: var(--wam-margin-top);
+}
+
+.hole {
+  width: var(--wam-hole-size);
+  height: var(--wam-hole-size);
+  background-color: green;
+  border-radius: var(--wam-border-radius);
+  position: relative;
+  cursor: url('https://res.cloudinary.com/dszffglcl/image/upload/v1720548054/mefulalfchgsnzlnvxgb.png'),
+    auto;
+}
+.mole {
+  width: var(--wam-mole-size);
+  height: var(--wam-mole-size);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: none;
+}
+#score,
+#timer {
+  text-align: center;
+  font-size: var(--wam-font-size);
+  margin-top: 20px;
+  color: var(--wam-color-white);
+}
+
+#game-over-message {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--wam-background-color);
+  color: var(--wam-color-white);
+  padding: var(--wam-padding);
+  border-radius: var(--wam-border-radius-message);
+  text-align: center;
+  z-index: 1000;
+  font-size: var(--wam-font-size-message);
+  margin-top: 150px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--wam-controls-gap);
+  margin-top: var(--wam-controls-margin-top);
+}
+
+.nameGame {
+  font-size: var(--player-font-size);
+  margin-top: var(--margin-top);
+  color: var(--player-color);
+}
+
+@media (max-width: 599px) {
+  :root {
+    --wam-hole-size: 80px;
+    --wam-mole-size: 60px;
+    --wam-gap-size: 5px;
+    --wam-font-size: 18px;
+    --wam-margin-top: 30px;
+    --wam-padding: 15px;
+    --wam-font-size-message: 18px;
+    --wam-controls-gap: 10px;
+    --wam-controls-margin-top: 10px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  :root {
+    --wam-hole-size: 90px;
+    --wam-mole-size: 70px;
+    --wam-gap-size: 8px;
+    --wam-font-size: 22px;
+    --wam-margin-top: 40px;
+    --wam-padding: 18px;
+    --wam-font-size-message: 22px;
+    --wam-controls-gap: 15px;
+    --wam-controls-margin-top: 15px;
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --wam-hole-size: 100px;
+    --wam-mole-size: 80px;
+    --wam-gap-size: 10px;
+    --wam-font-size: 24px;
+    --wam-margin-top: 50px;
+    --wam-padding: 20px;
+    --wam-font-size-message: 24px;
+    --wam-controls-gap: 20px;
+    --wam-controls-margin-top: 20px;
+  }
+}

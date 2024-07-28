@@ -1,0 +1,63 @@
+@import url('variables.css');
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: var(--body-height);
+  background: linear-gradient(
+    135deg,
+    var(--body-primary-color),
+    var(--body-secondary-color),
+    var(--body-tertiary-color)
+  );
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin-top: 3rem;
+  min-height: var(--body-min-height);
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+@media (max-width: 599px) {
+  body {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  body {
+    flex-direction: row;
+    margin-top: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    flex-direction: row;
+    margin-top: var(--body-margin-top);
+  }
+
+  h1 {
+    font-size: var(--body-h1-font-size);
+  }
+}

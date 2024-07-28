@@ -1,0 +1,88 @@
+@import url('../../variables.css');
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(4, var(--mg-card-size));
+  grid-gap: var(--mg-grid-gap);
+  margin-top: var(--mg-margin);
+}
+
+.card {
+  position: relative;
+  width: var(--mg-card-size);
+  height: var(--mg-card-size);
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform var(--mg-transition-duration);
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card .front-face,
+.card .back-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--mg-border-radius);
+}
+
+.card .front-face {
+  transform: rotateY(180deg);
+}
+
+.card .back-face {
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nameGame {
+  font-size: var(--player-font-size);
+  margin-top: var(--margin-top);
+  color: var(--player-color);
+}
+
+.score-board,
+#spanAttempts {
+  font-size: var(--mg-font-size);
+  color: var(--player-color);
+}
+
+.matched-pairs {
+  font-size: var(--mg-font-size);
+  margin-top: var(--margin-top);
+  color: var(--player-color);
+}
+
+@media (max-width: 599px) {
+  :root {
+    --mg-card-size: 100px;
+    --mg-grid-gap: 5px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  :root {
+    --mg-card-size: 140px;
+    --mg-grid-gap: 15px;
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --mg-card-size: 160px;
+    --mg-grid-gap: 20px;
+  }
+}
